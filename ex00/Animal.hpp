@@ -1,16 +1,16 @@
 #pragma once
-
 #include <string>
 
 class Animal
 {
     protected:
-        std::string _type;
+        std::string type;
     public:
-		Animal(std::string type = "Animal");
-		Animal(Animal &copy);
-		virtual ~Animal();
-		Animal &operator=(Animal &copy);
-        void	makeSound(void);
-		std::string	getType(void);
+        Animal( void );
+        Animal(Animal &copy);
+        virtual ~Animal( void );
+        virtual Animal &operator=(Animal &copy);
+        virtual void makeSound( void ) const;
+        std::string getType( void ) const;    
+
 };
