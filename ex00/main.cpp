@@ -14,6 +14,7 @@ int main( void )
     const WrongAnimal* s = new WrongCat();
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
+    std::cout << s->getType() << " " << std::endl;
     i->makeSound(); //will output the cat sound!
     j->makeSound();
     s->makeSound();

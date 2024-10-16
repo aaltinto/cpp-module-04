@@ -12,14 +12,30 @@ int main( void )
     for (int i = 0; i < 6; i++)
     {
         if (i < 3)
+        {
             newAnimals[i] = new Dog();
+            if (newAnimals[i] == NULL)
+            {
+                std::cerr << "An allocation error accured" << std::endl;
+                for (int ind = i; ind != 0; ind--)
+                    delete newAnimals[ind];
+                exit (1);
+            }
+        }
         else
+        {
             newAnimals[i] = new Cat();
+            if (newAnimals[i] == NULL)
+            {
+                std::cerr << "An allocation error accured" << std::endl;
+                for (int ind = i; ind != 0; ind--)
+                    delete newAnimals[ind];
+                exit (1);
+            }
+        }
     }
-    for (int i = 0; i < 6; i++)
-        delete newAnimals[i];
 
-    Cat *a = new Cat;
+    Cat *a = new Cat();
     std::cout << "Ideas of Cat a\n" << std::endl;
     a->printIdeas();
     Cat *b = new Cat(*a);
@@ -30,4 +46,6 @@ int main( void )
     b->printIdeas();
     delete a;
     delete b;
+    for (int i = 0; i < 6; i++)
+        delete newAnimals[i];
 }
