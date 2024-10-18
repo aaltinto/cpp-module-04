@@ -26,6 +26,7 @@ Dog &Dog::operator=(Dog& copy)
 {
     std::cout << "Dog copy assignment operator called" << std::endl;
     this->type = copy.type;
+    delete this->brain;
     this->brain = new Brain;
     *this->brain = *copy.brain;
     return *this;
