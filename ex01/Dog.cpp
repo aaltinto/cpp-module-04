@@ -12,7 +12,7 @@ Dog::Dog(Dog &copy)
 {
     std::cout << "Dog copy constructor called" << std::endl;
     this->brain = new Brain;
-    this->brain = copy.brain;
+    *this->brain = *copy.brain;
     this->type = copy.type;
 }
 
@@ -27,7 +27,7 @@ Dog &Dog::operator=(Dog& copy)
     std::cout << "Dog copy assignment operator called" << std::endl;
     this->type = copy.type;
     this->brain = new Brain;
-    this->brain = copy.brain;
+    *this->brain = *copy.brain;
     return *this;
 }
 

@@ -35,10 +35,10 @@ int main( void )
         }
     }
 
-    Cat *a = new Cat();
+    Dog *a = new Dog();
     std::cout << "Ideas of Cat a\n" << std::endl;
     a->printIdeas();
-    Cat *b = new Cat(*a);
+    Dog *b = new Dog(*a);
     b->setIdea(2, "another idea");
     std::cout << "\nIdeas of Cat a\n" << std::endl;
     a->printIdeas();
